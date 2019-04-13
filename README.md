@@ -20,7 +20,9 @@ In your desired application, you may have a data model that already exists in on
 
 
 import json
+
 import fileinput
+
 from watson_developer_cloud import VisualRecognitionV3, WatsonApiException
 
 visual_recognition = VisualRecognitionV3('2018-03-19', iam_apikey='yourAPIkeyHere')
@@ -46,7 +48,9 @@ Each of these Zip folders contain yet another folder that has at least 10 images
 
 
 import json
+
 import fileinput
+
 from watson_developer_cloud import VisualRecognitionV3, WatsonApiException
 
 visual_recognition = VisualRecognitionV3('2018-03-19', iam_apikey=’yourAPIkeyHere’)
@@ -58,14 +62,18 @@ with open('classA.zip', 'rb') as classA, open('classB.zip', 'rb') as classB, ope
     negative_examples=negative).get_result()
             
 print(json.dumps(model, indent=2))
+
 Upon successful training, we get this JSON returned to us:  
 
 https://imgur.com/Kycwxao
 
 Step 4: Using the Classifier
 Now comes the scary part, seeing if it works after all this effort. Using the same image that I initally gave to classify, I’m passing it in but calling my custom classifier instead:
+
 import json
+
 import fileinput
+
 from watson_developer_cloud import VisualRecognitionV3, WatsonApiException
 
 visual_recognition = VisualRecognitionV3('2018-03-19', iam_apikey='yourAPIkeyHere')
