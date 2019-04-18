@@ -3,7 +3,7 @@ import fileinput
 from watson_developer_cloud import VisualRecognitionV3, WatsonApiException
 
 def main():
-    visual_recognition = VisualRecognitionV3('2018-03-19',iam_apikey='09tx6UjaBn4dvOecmCRTGQe4e6uoXDHGow7_mFvqOr4N')
+    visual_recognition = VisualRecognitionV3('2018-03-19',iam_apikey='0jaBn4dvOecmCRTGQe4e6uoXDHGow7_mFvqOr4N')
     with open('images/classifyme3.zip', 'rb') as images_zip:
         response = visual_recognition.classify(
             images_zip, threshold=0.0,
